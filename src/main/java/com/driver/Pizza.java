@@ -1,9 +1,7 @@
 package com.driver;
 
 public class Pizza {
-
-    private int price;//calculating the final bill price
-
+    private int price;
     private Boolean isVeg;
     private String bill;
     private int cheesePrice=100;
@@ -11,8 +9,8 @@ public class Pizza {
     private int takeAwayPrice=20;
 
     boolean isCheeseAdded;
-    boolean isToppingAddaed;
-    boolean isTakeAwayAded;
+    boolean isToppingAdded;
+    boolean isTakeAwayAdded;
     boolean isBillGenereted;
 
     public Pizza(Boolean isVeg){
@@ -26,11 +24,12 @@ public class Pizza {
             this.price=400;
             this.toppingPrice=120;
         }
-        this.isTakeAwayAded=false;
-        this.isCheeseAdded=false;
-        this.isToppingAddaed=false;
 
-        this.bill="Base Price of the Pizza"+this.price+"\n";
+        this.isTakeAwayAdded=false;
+        this.isCheeseAdded=false;
+        this.isToppingAdded=false;
+
+        this.bill="Base Price Of The Pizza: "+this.price+"\n";
         // your code goes here
 
     }
@@ -52,17 +51,16 @@ public class Pizza {
 
     public void addExtraToppings(){
         //your code goes here
-        if(isToppingAddaed==false){
+        if(isToppingAdded==false){
             this.price=this.price+this.toppingPrice;
-            isToppingAddaed=true;
+            isToppingAdded=true;
         }
     }
-
     public void addTakeaway(){
         //your code goes here
-        if(isTakeAwayAded==false){
+        if(isTakeAwayAdded==false){
             this.price=this.price+this.takeAwayPrice;
-            isTakeAwayAded=true;
+            isTakeAwayAdded=true;
         }
     }
 
@@ -70,15 +68,16 @@ public class Pizza {
         //your code goes here
         if(isBillGenereted==false){
             if(isCheeseAdded==true){
-                this.bill=this.bill+"Extra Cheese Added "+this.cheesePrice+"\n";
+                this.bill=this.bill+"Extra Cheese Added: "+this.cheesePrice+"\n";
             }
-            if(isToppingAddaed==true){
-                this.bill=this.bill+"Extra Topping Added: "+this.toppingPrice+"\n";
+            if(isToppingAdded==true){
+                this.bill=this.bill+"Extra Toppings Added: "+this.toppingPrice+"\n";
             }
-            if(isTakeAwayAded==true){
-                this.bill=this.bill+" Paperbag Added: "+this.takeAwayPrice+"\n";
+            if(isTakeAwayAdded==true){
+                this.bill=this.bill+"Paperbag Added: "+this.takeAwayPrice+"\n";
             }
-            this.bill=this.bill+" Total Price: "+this.price+"\n";
+
+            this.bill=this.bill+"Total Price: "+this.price+"\n";
             isBillGenereted=true;
         }
         return this.bill;
